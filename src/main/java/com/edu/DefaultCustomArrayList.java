@@ -1,51 +1,53 @@
 package com.edu;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class DefaultCustomArrayList<E> implements CustomArrayList<E> {
 
+    private ArrayList<E> internalList;
+
     public DefaultCustomArrayList() {
+        internalList = new ArrayList<>();
     }
 
     @Override
     public boolean add(E element) {
-        return true;
+        return internalList.add(element);
     }
 
     @Override
     public boolean remove(E element) {
-        return false;
-    }
-
-    private void remove(int index) {
+        return internalList.remove(element);
     }
 
     @Override
     public E get(int index) {
-        return null;
+        return internalList.get(index);
     }
 
     @Override
     public int size() {
-        return 0;
+        return internalList.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return internalList.isEmpty();
     }
 
     @Override
     public void clear() {
+        internalList.clear();
     }
 
     @Override
     public boolean contains(E element) {
-        return false;
+        return internalList.contains(element);
     }
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return internalList.iterator();
     }
 }
